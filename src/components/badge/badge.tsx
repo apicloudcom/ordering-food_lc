@@ -5,12 +5,12 @@
     }
   
     render = (props) => {
-      return <Badge onclick={this.test}>Badge TSX !! {props.type}</Badge>
+      return <button onclick={this.test}>Badge TSX !! {props.type}</button>
     }
 
     test(){
       api.alert({
-        msg:"ggg"
+        msg:"Badge"
       })
     }
   }

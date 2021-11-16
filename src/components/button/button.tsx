@@ -19,7 +19,7 @@ export type ButtonProps = {
 
     test(){
       api.alert({
-        msg:"ggg"
+        msg:"Button"
       })
     }
   }

@@ -1,15 +1,13 @@
-import { Button } from "../button";
-
+import {Button} from "../button";
+import Badge from "../../badge";
 
 
 const template = <view>
 
-  <Button />
-  <Button />
+  <Button/>
 
-  <Button />
-
-
+  <Badge/>
+  
 </view>;
 
 avm.render(template, "body")
