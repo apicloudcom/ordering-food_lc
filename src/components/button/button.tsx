@@ -1,5 +1,3 @@
-declare var avm: any;
-
 export type ButtonProps = {
     color?: 'default' | 'primary' | 'success' | 'warning' | 'danger'
     fill?: 'solid' | 'outline' | 'none'
@@ -10,13 +8,19 @@ export type ButtonProps = {
     disabled?: boolean
     type?: 'submit' | 'reset' | 'button'
   } 
-  export class Button extends avm.Component {
+  export class Button extends Component {
     install = () => {
-      console.log("Button")
+      console.log("Button !")
     }
   
     render = (props: ButtonProps) => {
-      return <button>Button TSX {props.type}</button>
+      return <button onclick={this.test}>Button TSX !! {props.type}</button>
+    }
+
+    test(){
+      api.alert({
+        msg:"ggg"
+      })
     }
   }
   
