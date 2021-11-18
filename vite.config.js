@@ -7,6 +7,7 @@ const buildInput = function () {
   const inputs = {};
   const components = readdirSync(resolve(__dirname, 'src/components'));
   components.forEach(component => inputs[component] = resolve(__dirname, `src/components/${component}/index.ts`));
+  inputs['index'] = resolve(__dirname, 'src/index.ts');
   return inputs;
 }
 
@@ -30,11 +31,28 @@ export default defineConfig({
           avm: 'avm'
         },
         entryFileNames: '[name]/index.js',
-        dir: 'dist/mxui',
+        chunkFileNames: '[name]/[name].js',
+        assetFileNames: '[name]/[name].[ext]',
+        manualChunks: false,
+        // dir: `D:/work/uz/小组工作/mp-web-test/components/mxui`,
+        dir: `dist/mxui`,
         esModule: true,
-        exports: 'auto',
+        exports: 'named',
       },
       preserveEntrySignatures: "strict",
+    },
+    cssCodeSplit: true
+  },
+  css: {
+    preprocessorOptions: {
+      less: {
+        modifyVars: {
+          // '@class-prefix': 'mx',
+        },
+      }
+    },
+    output: (style) => {
+      console.log(style)
     }
   }
 })
