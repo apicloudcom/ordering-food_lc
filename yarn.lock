@@ -178,6 +178,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"commander@npm:^2.17.1":
+  version: 2.20.3
+  resolution: "commander@npm:2.20.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fcommander%2Fdownload%2Fcommander-2.20.3.tgz"
+  checksum: ab8c07884e42c3a8dbc5dd9592c606176c7eb5c1ca5ff274bcf907039b2c41de3626f684ea75ccf4d361ba004bbaff1f577d5384c155f3871e456bdf27becf9e
+  languageName: node
+  linkType: hard
+
 "concat-map@npm:0.0.1":
   version: 0.0.1
   resolution: "concat-map@npm:0.0.1"
@@ -790,6 +797,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lorem-ipsum@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "lorem-ipsum@npm:2.0.4::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Florem-ipsum%2Fdownload%2Florem-ipsum-2.0.4.tgz"
+  dependencies:
+    commander: ^2.17.1
+  bin:
+    lorem-ipsum: dist/bin/lorem-ipsum.bin.js
+  checksum: 5f3864bfaef504922f2109a645783307f79fbadcce780b5c24e24de64fe5c63090aa3831b389d21072cea9a3d0a9fa959da5e20fab584a912d2f085d3936b197
+  languageName: node
+  linkType: hard
+
 "lru-cache@npm:^6.0.0":
   version: 6.0.0
   resolution: "lru-cache@npm:6.0.0"
@@ -959,6 +977,7 @@ __metadata:
     less: ^4.1.2
     less-loader: ^10.2.0
     lodash: ^4.17.21
+    lorem-ipsum: ^2.0.4
     typescript: ^4.3.2
     vite: ^2.6.4
   languageName: unknown

@@ -15,6 +15,7 @@
     "noImplicitReturns": true,
     "jsx": "preserve",
     "jsxFactory": "avm.h",
+    "jsxFragmentFactory": "avm.f",
     "noImplicitAny": false
   },
   "include": ["./src"]
