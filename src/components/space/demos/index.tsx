@@ -1,6 +1,5 @@
-import React from 'react'
-import { Space, Button } from 'antd-mobile'
-import { DemoBlock } from 'demos'
+import {Space, Button} from '../../../index'
+import {DemoBlock} from '../../../demos'
 
 export default () => {
   return (
@@ -35,7 +34,7 @@ export default () => {
         </Space>
       </DemoBlock>
       <DemoBlock title='自定义间距大小'>
-        <Space style={{ '--gap': '24px' }}>
+        <Space style={{'--gap': '24px'}}>
           <Button>按钮1</Button>
           <Button>按钮2</Button>
           <Button>按钮3</Button>
@@ -53,10 +52,10 @@ export default () => {
         <Space justify='center' block>
           <Button>1</Button>
           <Button>
-            2<br />2
+            2<br/>2
           </Button>
           <Button>
-            3<br />3<br />3
+            3<br/>3<br/>3
           </Button>
         </Space>
       </DemoBlock>
@@ -64,10 +63,10 @@ export default () => {
         <Space align='end'>
           <Button>1</Button>
           <Button>
-            2<br />2
+            2<br/>2
           </Button>
           <Button>
-            3<br />3<br />3
+            3<br/>3<br/>3
           </Button>
         </Space>
       </DemoBlock>
