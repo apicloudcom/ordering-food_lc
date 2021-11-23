@@ -42,17 +42,5 @@ export default defineConfig({
       preserveEntrySignatures: "strict",
     },
     cssCodeSplit: true
-  },
-  css: {
-    preprocessorOptions: {
-      less: {
-        modifyVars: {
-          // '@class-prefix': 'mx',
-        },
-      }
-    },
-    output: (style) => {
-      console.log(style)
-    }
   }
 })

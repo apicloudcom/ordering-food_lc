@@ -1,22 +1,18 @@
-@import "src/global/theme";
+@class-prefix-button: ~'adm-button';
 
-@ns: @{class-prefix}-button;
+.@{class-prefix-button} {
+  --color: var(--adm-color-white);
 
-// \((.*), v?a?r?(.*)\)    ->      if(isdefined($1),$1,$2) 
+  --text-color: var(--adm-button-text-color, var(--adm-color-text));
+  --background-color: var(--adm-button-background-color,
+  var(--adm-color-white));
+  --border-radius: var(--adm-button-border-radius, 4px);
+  --border-width: var(--adm-button-border-width, 1px);
+  --border-style: var(--adm-button-border-style, solid);
+  --border-color: var(--adm-button-border-color, var(--adm-border-color));
 
-.@{ns} {
-
-  @color: (@adm-color-white);
-
-  @text-color: if(isdefined(@adm-button-text-color), @adm-button-text-color,(@adm-color-text));
-  @background-color: if(isdefined(@adm-button-background-color), @adm-button-background-color, @adm-color-white);
-  @border-radius: if(isdefined(@adm-button-border-radius), @adm-button-border-radius, 4px);
-  @border-width: if(isdefined(@adm-button-border-width), @adm-button-border-width, 1px);
-  @border-style: if(isdefined(@adm-button-border-style), @adm-button-border-style, solid);
-  @border-color: if(isdefined(@adm-button-border-color), @adm-button-border-color,(@adm-border-color));
-
-  color: (@text-color);
-  background-color: (@background-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -26,12 +22,11 @@
   font-size: 15px;
   line-height: 1.4;
   text-align: center;
-  border: (@border-width) (@border-style) (@border-color);
-  border-radius: (@border-radius);
+  border: var(--border-width) var(--border-style) var(--border-color);
+  border-radius: var(--border-radius);
   cursor: pointer;
   transition: opacity ease 0.15s;
   user-select: none;
-
 
   &:focus {
     outline: none;
@@ -45,6 +40,7 @@
     height: 100%;
     background-color: #000;
     border: inherit;
+    border-color: #000;
     border-radius: inherit;
     transform: translate(-50%, -50%);
     opacity: 0;
@@ -57,48 +53,48 @@
   }
 
   &-default {
-    &.@{ns}-fill-outline {
-      @background-color: transparent;
-      @border-color: (@adm-color-text);
+    &.@{class-prefix-button}-fill-outline {
+      --background-color: transparent;
+      --border-color: var(--adm-color-text);
     }
 
-    &.@{ns}-fill-none {
-      @background-color: transparent;
-      @border-color: transparent;
+    &.@{class-prefix-button}-fill-none {
+      --background-color: transparent;
+      --border-color: transparent;
     }
   }
 
   &:not(&-default) {
-    @text-color: (@adm-color-white);
-    @background-color: (@color);
-    @border-color: (@color);
+    --text-color: var(--adm-color-white);
+    --background-color: var(--color);
+    --border-color: var(--color);
 
-    &.@{ns}-fill-outline {
-      @text-color: (@color);
-      @background-color: transparent;
+    &.@{class-prefix-button}-fill-outline {
+      --text-color: var(--color);
+      --background-color: transparent;
     }
 
-    &.@{ns}-fill-none {
-      @text-color: (@color);
-      @background-color: transparent;
-      @border-color: transparent;
+    &.@{class-prefix-button}-fill-none {
+      --text-color: var(--color);
+      --background-color: transparent;
+      --border-color: transparent;
     }
   }
 
   &-primary {
-    @color: (@adm-color-primary);
+    --color: var(--adm-color-primary);
   }
 
   &-success {
-    @color: (@adm-color-success);
+    --color: var(--adm-color-success);
   }
 
   &-danger {
-    @color: (@adm-color-danger);
+    --color: var(--adm-color-danger);
   }
 
   &-warning {
-    @color: (@adm-color-warning);
+    --color: var(--adm-color-warning);
   }
 
   &-block {
@@ -145,5 +141,3 @@
     }
   }
 }
-
-

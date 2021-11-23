@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import Loading from "../loading";
 
-const classPrefix = `mx-button`;
+const classPrefix = `adm-button`;
 
 export type ButtonProps = {
   color?: 'default' | 'primary' | 'success' | 'warning' | 'danger'
