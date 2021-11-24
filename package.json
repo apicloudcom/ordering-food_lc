@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build --mode single",
+    "build: chunk": "tsc && vite build --mode chunk"
   },
   "devDependencies": {
     "less": "^4.1.2",
