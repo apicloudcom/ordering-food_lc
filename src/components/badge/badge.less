@@ -20,18 +20,16 @@
   white-space: nowrap;
   --right: 0;
   --top: 0;
-
-  &-fixed {
-    position: absolute;
-    right: var(--right);
-    top: var(--top);
-    transform: translate(50%, -50%);
-  }
-
-  &-dot {
-    min-width: 10px;
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
-  }
+}
+.@{class-prefix-badge}--fixed {
+  position: absolute;
+  right: var(--right);
+  top: var(--top);
+  transform: translate(50%, -50%);
+}
+.@{class-prefix-badge}--dot {
+  min-width: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
 }

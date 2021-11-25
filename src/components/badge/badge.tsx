@@ -1,20 +1,31 @@
-import Button from "../button";
+import classNames from 'classnames'
+import { mergeProps } from '../../utils/with-default-props'
 
+const classPrefix = `adm-badge`
+
+const defaultProps = {
+  color: '#FF411C'
+}
 export class Badge extends Component {
   install = () => {
-    console.log("Badge !")
+    console.log('Badge!')
   }
 
   render = (props) => {
-    return <view>
-      <button onclick={this.test}>Badge TSX !! {props.type}</button>
-      <Button>复用Button</Button>
-    </view>
-  }
-
-  test() {
-    api.alert({
-      msg: "Badge"
+    props = mergeProps(defaultProps, props)
+    const {content, color, children, isDot} = props
+    const badgeCls = classNames(classPrefix, {
+      [`${classPrefix}--fixed`]: !!children,
+      [`${classPrefix}--dot`]: isDot,
     })
+
+    return (
+      <div className={`${classPrefix}-wrap`}>
+        {children}
+        <text className={badgeCls} style={{backgroundColor: color}}>
+          {!isDot && content}
+        </text>
+      </div>
+    ) 
   }
 }
