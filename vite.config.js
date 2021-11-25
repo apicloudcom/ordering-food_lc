@@ -20,8 +20,8 @@ export default defineConfig(({mode}) => {
             avm: 'avm'
           },
           manualChunks: false,
-          dir: `D:/yonyou/code/APICloud/测试应用是否可以删除/components/avm-ui`,
-          // dir: `dist/avm-ui`,
+          // dir: `D:/work/uz/小组工作/mp-web-test/components/avm-ui`,
+          dir: `dist/avm-ui`,
           esModule: true,
           exports: 'named',
         },
