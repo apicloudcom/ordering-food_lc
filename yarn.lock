@@ -178,6 +178,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"color-name@npm:^1.1.4":
+  version: 1.1.4
+  resolution: "color-name@npm:1.1.4::__archiveUrl=https%3A%2F%2Fregistry.nlark.com%2Fcolor-name%2Fdownload%2Fcolor-name-1.1.4.tgz"
+  checksum: b0445859521eb4021cd0fb0cc1a75cecf67fceecae89b63f62b201cca8d345baf8b952c966862a9d9a2632987d4f6581f0ec8d957dfacece86f0a7919316f610
+  languageName: node
+  linkType: hard
+
 "commander@npm:^2.17.1":
   version: 2.20.3
   resolution: "commander@npm:2.20.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fcommander%2Fdownload%2Fcommander-2.20.3.tgz"
@@ -715,6 +722,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-url-superb@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "is-url-superb@npm:4.0.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fis-url-superb%2Fdownload%2Fis-url-superb-4.0.0.tgz"
+  checksum: fd55e91c96349acb0d688f95fcb1ac67450e5db934976e3a8ff13ef446841e779a6f4d18b15f02331f05a3429c8fdaba2382ac1ab444059e86e9ffcde1ec8db0
+  languageName: node
+  linkType: hard
+
 "is-what@npm:^3.12.0":
   version: 3.14.1
   resolution: "is-what@npm:3.14.1::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fis-what%2Fdownload%2Fis-what-3.14.1.tgz"
@@ -978,6 +992,7 @@ __metadata:
     less-loader: ^10.2.0
     lodash: ^4.17.21
     lorem-ipsum: ^2.0.4
+    postcss-custom-properties: ^12.0.0
     typescript: ^4.3.2
     vite: ^2.6.4
   languageName: unknown
@@ -1122,6 +1137,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-custom-properties@npm:^12.0.0":
+  version: 12.0.0
+  resolution: "postcss-custom-properties@npm:12.0.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fpostcss-custom-properties%2Fdownload%2Fpostcss-custom-properties-12.0.0.tgz"
+  dependencies:
+    postcss-values-parser: ^6
+  peerDependencies:
+    postcss: ^8.3
+  checksum: 6b06287f1f88f828b4fba60f6081019dc8428e227b807c225903cadb4776d3b30cd6e9e87130522ae4a8f188fc8b757f68699b9e80ab5b3ddb3c31d0dade691c
+  languageName: node
+  linkType: hard
+
+"postcss-values-parser@npm:^6":
+  version: 6.0.1
+  resolution: "postcss-values-parser@npm:6.0.1::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fpostcss-values-parser%2Fdownload%2Fpostcss-values-parser-6.0.1.tgz"
+  dependencies:
+    color-name: ^1.1.4
+    is-url-superb: ^4.0.0
+    quote-unquote: ^1.0.0
+  peerDependencies:
+    postcss: ^8.2.9
+  checksum: 367d108bb6ff20415683380a3ef707a7090792e91c4c20a8a20727937094c1b1441a10418c4ac2e1665f44d98353742e529982c92697ebaf4db081d03fedfb71
+  languageName: node
+  linkType: hard
+
 "postcss@npm:^8.3.8":
   version: 8.3.11
   resolution: "postcss@npm:8.3.11"
@@ -1161,6 +1200,13 @@ __metadata:
   version: 1.0.1
   resolution: "prr@npm:1.0.1::__archiveUrl=https%3A%2F%2Fregistry.nlark.com%2Fprr%2Fdownload%2Fprr-1.0.1.tgz"
   checksum: 3bca2db0479fd38f8c4c9439139b0c42dcaadcc2fbb7bb8e0e6afaa1383457f1d19aea9e5f961d5b080f1cfc05bfa1fe9e45c97a1d3fd6d421950a73d3108381
+  languageName: node
+  linkType: hard
+
+"quote-unquote@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "quote-unquote@npm:1.0.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fquote-unquote%2Fdownload%2Fquote-unquote-1.0.0.tgz"
+  checksum: 955a2ead534f5b6a3f8d4dc5a4b95ac6468213d3fb11f8c1592a0a56345c45a3d14d5ca04d3de2bc9891493fcac38c03dfa91c48a6159aef50124e9c5afcea49
   languageName: node
   linkType: hard
 
