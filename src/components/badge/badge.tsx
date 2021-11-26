@@ -13,16 +13,20 @@ export class Badge extends Component {
 
   render = (props) => {
     props = mergeProps(defaultProps, props)
-    const {content, color, children, isDot} = props
+    const {content, color, children, isDot, right, top} = props
     const badgeCls = classNames(classPrefix, {
       [`${classPrefix}--fixed`]: !!children,
-      [`${classPrefix}--dot`]: isDot,
+      [`${classPrefix}--dot`]: isDot
     })
 
+    const styleRight = !!right && !!children ? right : 0;
+    const styleTop = !!top && !!children ? top : 0;
     return (
       <div className={`${classPrefix}-wrap`}>
         {children}
-        <text className={badgeCls} style={{backgroundColor: color}}>
+        <text
+          className={badgeCls}
+          style={{backgroundColor: color, right: styleRight, top: styleTop}}>
           {!isDot && content}
         </text>
       </div>

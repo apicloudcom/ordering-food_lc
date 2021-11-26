@@ -27,21 +27,21 @@ const template =
         <Badge
           color='#108ee9'
           isDot={true}
-          style={{ '--right': '100%', '--top': '100%' }}
-        >
+          right='100%'
+          top='100%'>
           <div className="box"/>
         </Badge>
         <Badge
           color='#87d068'
           isDot={true}
-          style={{ '--right': '100%' }}
+          right="100%"
         >
           <div className="box"/>
         </Badge>
         <Badge isDot={true}>
           <div className="box"/>
         </Badge>
-        <Badge color='orange' isDot={true} style={{ '--top': '100%' }}>
+        <Badge color='orange' isDot={true} top="100%">
           <div className="box"/>
         </Badge>
       </Space>

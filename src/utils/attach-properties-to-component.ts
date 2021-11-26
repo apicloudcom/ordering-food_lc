@@ -1,8 +1,5 @@
-export function attachPropertiesToComponent<C, P extends Record<string, any>>(
-  component: C,
-  properties: P
-): C & P {
-  const ret = component as any
+export function attachPropertiesToComponent(component, properties) {
+  const ret = component;
   for (const key in properties) {
     if (properties.hasOwnProperty(key)) {
       ret[key] = properties[key]

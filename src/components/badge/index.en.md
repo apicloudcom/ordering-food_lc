@@ -9,10 +9,5 @@
 | content | The content of the Badge: if `null` `undefined` `''` or nothing is passed, it would not be displayed | `React.ReactNode` | -         |
 | color   | The background color of the Badge                                                                                                                                  | `string`                              | `#FF411C` |
 | isDot   | Whether to display as a red dot. If `true` is passed, the red dot is displayed. Setting content is invalid                         | `Boolean`            | `false` |
-
-### CSS Variables
-
-| Name    | Description                                         | Default |
-| ------- | --------------------------------------------------- | ------- |
-| --right | the offset to the left, relative to the far right   | `0`     |
-| --top   | the downward offset, relative to the uppermost edge | `0`     |
+| right   | the offset to the left, relative to the far right                         | -            | `0` |
+| top   | the downward offset, relative to the uppermost edge                         | -            | `0` |
