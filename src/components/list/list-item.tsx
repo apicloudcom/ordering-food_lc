@@ -25,9 +25,9 @@ export class ListItem extends Component {
           )}
           <span className={`${classPrefix}-children`}>{props.children}</span>
           {props.description && (
-            <div className={`${classPrefix}-description`}>
+            <span className={`${classPrefix}-description`}>
               {props.description}
-            </div>
+            </span>
           )}
         </div>
         {props.extra && (

@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import {toCSSLength} from '../../utils/to-css-length'
 import { mergeProps } from '../../utils/with-default-props'
 
 const classPrefix = `adm-badge`
@@ -19,16 +20,18 @@ export class Badge extends Component {
       [`${classPrefix}--dot`]: isDot
     })
 
-    const styleRight = !!right && !!children ? right : 0;
-    const styleTop = !!top && !!children ? top : 0;
+    const style = {};
+    style['right'] = right ? toCSSLength(right) : 0
+    style['top'] = top ? toCSSLength(top) : 0
+
     return (
       <div className={`${classPrefix}-wrap`}>
         {children}
-        <text
+        <view
           className={badgeCls}
-          style={{backgroundColor: color, right: styleRight, top: styleTop}}>
+          style={{backgroundColor: color, ...style}}> 
           {!isDot && content}
-        </text>
+        </view>
       </div>
     ) 
   }
