@@ -1,4 +1,4 @@
-// import React, { ReactNode } from 'react'
+// import { nodeOrText } from '../../utils/node-or-text'
 import classNames from 'classnames'
 
 const classPrefix = `adm-card`
@@ -21,14 +21,15 @@ export class Card extends Component {
       if (!(props.title || props.extra)) {
         return null
       }
+
       return (
         <div
           className={classNames(`${classPrefix}-header`, props.headerClassName)}
           style={props.headerStyle}
           onClick={props.onHeaderClick}
         >
-          <div className={`${classPrefix}-header-title`}>{props.title}</div>
-          {props.extra}
+          {props.title.children ? props.title : <text className={`${classPrefix}-header-title`}>{props.title}</text>}
+          {props.extra ? props.extra : <text>{props.extra}</text>}
         </div>
       )
     }
@@ -36,6 +37,7 @@ export class Card extends Component {
       if (!props.children) {
         return null
       }
+      console.log(props.children)
       return (
         <div
           className={classNames(`${classPrefix}-body`, props.bodyClassName)}
@@ -46,7 +48,7 @@ export class Card extends Component {
         </div>
       )
     }
-    return(
+    return (
       <div className={classPrefix} onClick={props.onClick}>
         {renderHeader()}
         {renderBody()}
