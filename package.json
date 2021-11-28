@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build --mode single",
-    "build: chunk": "tsc && vite build --mode chunk"
+    "build: chunk": "tsc && vite build --mode chunk",
+    "build: icons": "cd src/components/icon/_gen/ && node ./"
   },
   "devDependencies": {
     "less": "^4.1.2",

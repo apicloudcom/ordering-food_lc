@@ -1,6 +1,6 @@
-const buildSvgFromReact = require('./src/buildSvgFromReact');
-const svg2font = require('./src/svg2font');
-const mergeCustomIcons = require('./src/mergeCustomIcons');
+import buildSvgFromReact from './src/buildSvgFromReact.js';
+import svg2font from "./src/svg2font.js";
+import {mergeCustomIcons} from "./src/mergeCustomIcons.js";
 
 const fontName = 'avm-icon';
 const svgPath = './dist/svg/';

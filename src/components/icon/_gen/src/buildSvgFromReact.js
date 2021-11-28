@@ -1,7 +1,7 @@
-const icons = require('antd-mobile-icons');
-const fs = require("fs-extra");
+import icons from 'antd-mobile-icons';
+import fs from 'fs-extra';
 
-function buildSvg(outputPath) {
+export default function buildSvgFromReact(outputPath) {
 
   fs.ensureDirSync(outputPath);
   fs.emptyDirSync(outputPath);
@@ -18,7 +18,6 @@ function buildSvg(outputPath) {
   return files;
 }
 
-module.exports = buildSvg;
 
 /**
  * 从虚拟节点渲染真实节点
