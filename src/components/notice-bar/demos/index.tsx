@@ -16,7 +16,7 @@ const template =
       <NoticeBar content='警告' color='alert'/>
       <NoticeBar content='错误' color='error' />
       <NoticeBar content='信息' color='info' />
-      <NoticeBar content='自定义颜色' color='自定义颜色' bgColor="#f0f" textColor="#000" borderColor="#0f0"/>
+      {/* <NoticeBar content='自定义颜色' color='自定义颜色' bgColor="#f0f" textColor="#000" borderColor="#0f0"/> */}
     </Space>
   </DemoBlock>
   <DemoBlock title='可关闭' padding='0' border='none'>
