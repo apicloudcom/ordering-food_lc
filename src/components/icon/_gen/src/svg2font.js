@@ -104,10 +104,11 @@ async function svgtofont(options) {
 
     Object.keys(unicodeObject).forEach(name => {
       const _code = unicodeObject[name];
+      const pascalName = camelcase(name, {pascalCase: true});
       let symbolName = options.classNamePrefix + '-' + name
       let iconPart = symbolName + '">';
       let encodedCodes = _code.charCodeAt(0);
-      componentList.push(`export class ${camelcase(name, {pascalCase: true})} extends Icon {code = ${encodedCodes};}`);
+      componentList.push(`export class ${pascalName} extends Icon {code = ${encodedCodes};}`);
 
 
       if (options.useNameAsUnicode) {
@@ -119,8 +120,8 @@ async function svgtofont(options) {
         cssToVars.push(`$${symbolName}: "\\${encodedCodes.toString(16)}";\n`);
       }
 
-      cssIconHtml.push(`<li class="class-icon"><i class="${iconPart}</i><p class="name">${name}</p></li>`);
-      unicodeHtml.push(`<li class="unicode-icon"><span class="iconfont">${_code}</span><h4>${name}</h4><span class="unicode">&amp;#${encodedCodes};</span></li>`);
+      cssIconHtml.push(`<li class="class-icon"><i class="${iconPart}</i><p class="name">${pascalName}</p></li>`);
+      unicodeHtml.push(`<li class="unicode-icon"><span class="iconfont">${_code}</span><h4>${pascalName}</h4><span class="unicode">&amp;#${encodedCodes};</span></li>`);
       symbolHtml.push(`
         <li class="symbol">
           <svg class="icon" aria-hidden="true">
