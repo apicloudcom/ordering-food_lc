@@ -17,3 +17,5 @@ dist-ssr
 /.vscode/
 /.idea/
 /.apicloud/
+/widget/.idea/
+/widget/.apicloud/.labelinfo

@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "tsc && vite build --mode single",
     "build: chunk": "tsc && vite build --mode chunk",
-    "build: icons": "cd src/components/icon/_gen/ && node ./"
+    "build: icons": "cd src/components/icon/_gen/ && node ./",
+    "build: widget": "node src/utils/cli/copyFontToWidget.js"
   },
   "devDependencies": {
     "less": "^4.1.2",
