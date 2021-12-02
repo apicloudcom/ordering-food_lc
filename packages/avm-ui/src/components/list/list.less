@@ -68,15 +68,6 @@
       }
     }
   }
-  &-disabled {
-    .@{class-prefix-list-item}-content {
-      * {
-        cursor: not-allowed;
-        opacity: 0.6;
-        pointer-events: none;
-      }
-    }
-  }
 }
 
 a.@{class-prefix-list-item} {
@@ -88,4 +79,9 @@ a.@{class-prefix-list-item} {
       background-color: unset;
     }
   }
+}
+.list-disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+  pointer-events: none;
 }

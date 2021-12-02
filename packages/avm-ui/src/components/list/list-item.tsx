@@ -14,12 +14,14 @@ export class ListItem extends Component {
 
     const prefixWidth = !!props.prefixWidth ? props.prefixWidth : 'auto';
 
+    const disabledClass = props.disabled && 'list-disabled'
+
     const content = (
       <div className={`${classPrefix}-content`}>
         {props.prefix && (
-          <div className={`${classPrefix}-content-prefix`} style={{width: prefixWidth}}>{props.prefix}</div>
+          <div className={classNames(`${classPrefix}-content-prefix`, disabledClass)} style={{width: prefixWidth}}>{props.prefix}</div>
         )}
-        <div className={`${classPrefix}-content-main`}>
+        <div className={classNames(`${classPrefix}-content-main`, disabledClass)}>
           {props.title && (
             <span className={`${classPrefix}-title`}>{props.title}</span>
           )}
@@ -31,11 +33,11 @@ export class ListItem extends Component {
           )}
         </div>
         {props.extra && (
-          <div className={`${classPrefix}-content-extra`}>{props.extra}</div>
+          <div className={classNames(`${classPrefix}-content-extra`, disabledClass)}>{props.extra}</div>
         )}
         {arrow && (
-          <div className={`${classPrefix}-content-arrow`}>
-            {arrow === true ? <span>右箭头</span> : arrow}
+          <div className={classNames(`${classPrefix}-content-arrow`, disabledClass)}>
+            {arrow === true ? <span>&gt;</span> : arrow}
           </div>
         )}
       </div>
@@ -49,10 +51,8 @@ export class ListItem extends Component {
 
     const listItemEvent = props.disabled ? undefined : props.onClick
 
-    const element  = clickable
-      ? (<a className={listItemCls} onClick={listItemEvent}>{content}</a>)
-      : (<div className={listItemCls} onClick={listItemEvent}>{content}</div>)
-
-    return element
+    return (
+      <div className={listItemCls} onClick={listItemEvent}>{content}</div>
+    )
   }
 }
