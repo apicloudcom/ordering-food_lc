@@ -1,0 +1,741 @@
+.adm-button {
+  --color: var(--adm-color-white);
+  --text-color: var(--adm-button-text-color, var(--adm-color-text));
+  --background-color: var(--adm-button-background-color, var(--adm-color-white));
+  --border-radius: var(--adm-button-border-radius, 4px);
+  --border-width: var(--adm-button-border-width, 1px);
+  --border-style: var(--adm-button-border-style, solid);
+  --border-color: var(--adm-button-border-color, var(--adm-border-color));
+  color: var(--text-color);
+  background-color: var(--background-color);
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  height: auto;
+  padding: 7px 16px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.4;
+  text-align: center;
+  border: var(--border-width) var(--border-style) var(--border-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: opacity ease .15s;
+  user-select: none
+}
+
+.adm-button:focus {
+  outline: none
+}
+
+.adm-button:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  border: inherit;
+  border-color: #000;
+  border-radius: inherit;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  content: " ";
+  box-sizing: content-box
+}
+
+.adm-button:active:before {
+  opacity: .1
+}
+
+.adm-button-default.adm-button-fill-outline {
+  --background-color: transparent;
+  --border-color: var(--adm-color-text)
+}
+
+.adm-button-default.adm-button-fill-none {
+  --background-color: transparent;
+  --border-color: transparent
+}
+
+.adm-button:not(.adm-button-default) {
+  --text-color: var(--adm-color-white);
+  --background-color: var(--color);
+  --border-color: var(--color)
+}
+
+.adm-button:not(.adm-button-default).adm-button-fill-outline {
+  --text-color: var(--color);
+  --background-color: transparent
+}
+
+.adm-button:not(.adm-button-default).adm-button-fill-none {
+  --text-color: var(--color);
+  --background-color: transparent;
+  --border-color: transparent
+}
+
+.adm-button-primary {
+  --color: var(--adm-color-primary)
+}
+
+.adm-button-success {
+  --color: var(--adm-color-success)
+}
+
+.adm-button-danger {
+  --color: var(--adm-color-danger)
+}
+
+.adm-button-warning {
+  --color: var(--adm-color-warning)
+}
+
+.adm-button-block {
+  display: block;
+  width: 100%
+}
+
+.adm-button-disabled {
+  cursor: not-allowed;
+  opacity: .4
+}
+
+.adm-button-disabled:active:before {
+  display: none
+}
+
+.adm-button-mini {
+  padding: 3px 7px;
+  font-size: 13px
+}
+
+.adm-button-small {
+  padding: 3px 11px;
+  font-size: 15px
+}
+
+.adm-button-large {
+  padding: 11px 22px;
+  font-size: 18px
+}
+
+.adm-button-loading {
+  vertical-align: bottom
+}
+
+.adm-button-loading-wrapper {
+  display: flex;
+  height: 1.4em;
+  align-items: center;
+  justify-content: center
+}
+
+.adm-button-loading-wrapper > .adm-loading {
+  opacity: .6
+}
+
+.adm-loading {
+  display: inline-block
+}
+
+.adm-loading-default {
+  color: #999
+}
+
+.adm-loading-primary {
+  color: #1677ff
+}
+
+.adm-loading-white {
+  color: #fff
+}
+
+.adm-badge-wrap {
+  display: inline-block;
+  position: relative
+}
+
+.adm-badge {
+  display: inline-block;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  min-width: 16px;
+  border-radius: 100px;
+  padding: 0 4px;
+  font-size: 9px;
+  line-height: 1.2;
+  white-space: nowrap
+}
+
+.adm-badge--fixed {
+  position: absolute;
+  transform: translate(50%, -50%)
+}
+
+.adm-badge--dot {
+  min-width: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px
+}
+
+.adm-space-item {
+  flex: none
+}
+
+.adm-space {
+  display: inline-flex;
+  --gap: 8px;
+  --gap-vertical: var(--gap);
+  --gap-horizontal: var(--gap)
+}
+
+.adm-space-vertical {
+  flex-direction: column
+}
+
+.adm-space-vertical > .adm-space-item {
+  margin-bottom: var(--gap-vertical)
+}
+
+.adm-space-vertical > .adm-space-item:last-child {
+  margin-bottom: 0
+}
+
+.adm-space-horizontal {
+  flex-direction: row
+}
+
+.adm-space-horizontal > .adm-space-item {
+  margin-right: var(--gap-horizontal)
+}
+
+.adm-space-horizontal > .adm-space-item:last-child {
+  margin-right: 0
+}
+
+.adm-space-horizontal.adm-space-wrap {
+  flex-wrap: wrap;
+  margin-bottom: calc(var(--gap-vertical) * -1)
+}
+
+.adm-space-horizontal.adm-space-wrap > .adm-space-item {
+  padding-bottom: var(--gap-vertical)
+}
+
+.adm-space.adm-space-block {
+  display: flex
+}
+
+.adm-space-align-center {
+  align-items: center
+}
+
+.adm-space-align-start {
+  align-items: flex-start
+}
+
+.adm-space-align-end {
+  align-items: flex-end
+}
+
+.adm-space-align-baseline {
+  align-items: baseline
+}
+
+.adm-space-justify-center {
+  justify-content: center
+}
+
+.adm-space-justify-start {
+  justify-content: flex-start
+}
+
+.adm-space-justify-end {
+  justify-content: flex-end
+}
+
+.adm-space-justify-between {
+  justify-content: space-between
+}
+
+.adm-space-justify-around {
+  justify-content: space-around
+}
+
+.adm-space-justify-evenly {
+  justify-content: space-evenly
+}
+
+.adm-space-justify-stretch {
+  justify-content: stretch
+}
+
+.adm-list {
+  background-color: #fff;
+  overflow: hidden;
+  font-size: 17px
+}
+
+.adm-list--inner {
+  margin-bottom: -1px
+}
+
+.adm-list--default {
+  border: solid 1px #eeeeee;
+  border-right: none;
+  border-left: none
+}
+
+.adm-list--card {
+  margin: 12px;
+  border-radius: 8px
+}
+
+.adm-list-item {
+  display: block;
+  padding-left: 12px
+}
+
+.adm-list-item-title {
+  font-size: 15px;
+  color: #999
+}
+
+.adm-list-item-description {
+  color: #999;
+  font-size: 15px
+}
+
+.adm-list-item-children {
+  font-size: 15px
+}
+
+.adm-list-item-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 12px 12px 0;
+  border-bottom: solid 1px #eeeeee
+}
+
+.adm-list-item-content-prefix {
+  flex: none;
+  padding-right: 12px
+}
+
+.adm-list-item-content-main {
+  flex: auto;
+  display: flex;
+  flex-direction: column
+}
+
+.adm-list-item-content-extra {
+  flex: none;
+  padding-left: 12px
+}
+
+.adm-list-item-content-arrow {
+  flex: none;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  font-size: 16px;
+  color: #999
+}
+
+.adm-list-item-content-arrow span {
+  font-size: 16px
+}
+
+.adm-list-item-disabled .adm-list-item-content * {
+  cursor: not-allowed;
+  opacity: .6;
+  pointer-events: none
+}
+
+a.adm-list-item:active {
+  background-color: var(--active-background-color)
+}
+
+a.adm-list-item.adm-list-item-disabled:active {
+  background-color: unset
+}
+
+.adm-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 0 12px
+}
+
+.adm-card-header {
+  position: relative;
+  display: flex;
+  flex-direction: initial;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 12px 0
+}
+
+.adm-card-header:not(:last-child) {
+  border-bottom: solid .5px #eeeeee
+}
+
+.adm-card-header-title {
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 700
+}
+
+.adm-card-body {
+  padding: 12px 0
+}
+
+.adm-image {
+  display: inline-block;
+  overflow: hidden
+}
+
+.adm-image-img {
+  width: 100%;
+  height: 100%
+}
+
+.adm-image-tip {
+  position: relative;
+  background-color: #f3f3f3;
+  height: 100%;
+  min-height: 24px;
+  min-width: 24px
+}
+
+.adm-image-tip > .antd-mobile-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #999
+}
+
+@font-face {
+  font-family: avm-icon;
+  src: url(../../components/icon/_gen/dist/fonts/avm-icon.ttf) format("truetype")
+}
+
+.adm-icon {
+  font-family: avm-icon, monospace
+}
+
+.adm-mask {
+  --z-index: var(--adm-mask-z-index, 1000);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: var(--z-index);
+  display: block;
+  width: 100%;
+  height: 100%
+}
+
+.adm-mask-aria-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%
+}
+
+.adm-mask-content {
+  height: 100%;
+  z-index: 1
+}
+
+.adm-notice-bar {
+  width: 100%;
+  height: 30px;
+  font-size: 14px;
+  line-height: 30px;
+  padding: 0 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  --background-color: #b2b2b2;
+  --border-color: #a0a0a0;
+  --text-color: #ffffff;
+  border: solid 1px #a0a0a0;
+  border-left: none;
+  border-right: none;
+  background-color: #b2b2b2;
+  color: #fff
+}
+
+.adm-notice-bar-alert {
+  background-color: #fff9ed;
+  border-color: #fff3e9;
+  color: #ff6010
+}
+
+.adm-notice-bar-error {
+  background-color: #ff3b30;
+  border-color: #d9281e;
+  color: #fff
+}
+
+.adm-notice-bar-info {
+  background-color: #d0e4ff;
+  border-color: #bcd8ff;
+  color: #1677ff
+}
+
+.adm-notice-bar-left {
+  flex-shrink: 0;
+  margin-right: 8px
+}
+
+.adm-notice-bar-left-info {
+  color: #1677ff
+}
+
+.adm-notice-bar-left-error {
+  color: #fff
+}
+
+.adm-notice-bar-left-alert {
+  color: #ff6010
+}
+
+.adm-notice-bar-content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+
+.adm-notice-bar-content-inner {
+  width: fit-content;
+  transition-timing-function: linear;
+  position: absolute;
+  padding: 0 4px;
+  white-space: nowrap
+}
+
+.adm-notice-bar-content-inner-info {
+  color: #1677ff
+}
+
+.adm-notice-bar-content-inner-error {
+  color: #fff
+}
+
+.adm-notice-bar-content-inner-alert {
+  color: #ff6010
+}
+
+.adm-notice-bar-right {
+  flex-shrink: 0;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+
+.adm-notice-bar-right-info {
+  color: #1677ff
+}
+
+.adm-notice-bar-right-error {
+  color: #fff
+}
+
+.adm-notice-bar-right-alert {
+  color: #ff6010
+}
+
+.adm-page-indicator {
+  display: flex;
+  width: fit-content
+}
+
+.adm-page-indicator-dot {
+  display: block
+}
+
+.adm-page-indicator-dot:last-child {
+  margin-right: 0
+}
+
+.adm-page-indicator-color-white .adm-page-indicator-dot-active {
+  background: #fff
+}
+
+.adm-page-indicator-horizontal {
+  flex-direction: row
+}
+
+.adm-page-indicator-vertical {
+  flex-direction: column
+}
+
+.adm-step {
+  flex: 1
+}
+
+.adm-step-indicator {
+  display: flex;
+  align-items: center
+}
+
+.adm-step-content {
+  width: 95%
+}
+
+.adm-step-title {
+  color: #333;
+  width: 100%;
+  white-space: wrap
+}
+
+.adm-step-title-error {
+  color: #ff3141
+}
+
+.adm-step-title-finish {
+  color: #1677ff
+}
+
+.adm-step-title-wait {
+  color: #333
+}
+
+.adm-step-description {
+  width: 100%;
+  white-space: wrap
+}
+
+.adm-step-icon-container {
+  z-index: 1;
+  background: #fff
+}
+
+.adm-step-horizontal {
+  flex-direction: column;
+  align-items: flex-start
+}
+
+.adm-step-horizontal-indicator {
+  width: 100%;
+  height: 24px;
+  flex-direction: row
+}
+
+.adm-step-horizontal-line {
+  flex: 1;
+  height: 1px;
+  background: #e8e8e8
+}
+
+.adm-step-horizontal-content {
+  font-size: 12px;
+  padding-top: 2px
+}
+
+.adm-step-horizontal-content-description {
+  margin-top: 2px;
+  color: #999
+}
+
+.adm-step-vertical {
+  flex-direction: row;
+  align-items: baseline
+}
+
+.adm-step-vertical-indicator {
+  flex: none;
+  width: 24px;
+  height: 100%;
+  margin-right: 8px;
+  flex-direction: column
+}
+
+.adm-step-vertical-line {
+  flex: 1;
+  width: 1px;
+  background: #e8e8e8
+}
+
+.adm-step-vertical-content {
+  flex: auto;
+  padding: 10px 0
+}
+
+.adm-step-vertical-content-title {
+  font-size: 17px;
+  line-height: 1.5
+}
+
+.adm-step-vertical-content-description {
+  padding-top: 2px;
+  font-size: 15px;
+  color: #999
+}
+
+.adm-step-line-wait {
+  background: #e8e8e8
+}
+
+.adm-step-line-finish {
+  background: #1677ff
+}
+
+.adm-step-line-error {
+  background: #ff3141
+}
+
+.adm-steps {
+  width: 100%
+}
+
+.adm-steps-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 8px 0
+}
+
+.adm-steps-vertical {
+  padding: 8px 16px
+}
+
+.adm-step-icon-container {
+  font-size: 18px
+}
+
+.adm-step-icon-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: #e5e5e5;
+  border-radius: 4px
+}
+
+.adm-step-icon-dot-wait {
+  background: #e8e8e8
+}
+
+.adm-step-icon-dot-process, .adm-step-icon-dot-finish {
+  background: #1677ff
+}
+
+.adm-step-icon-dot-error {
+  background: #ff3141
+}
