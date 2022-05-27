@@ -1,0 +1,490 @@
+<template>
+	<view class="main-menu">
+		<safe-area>
+			<view class="header">
+				<text class="title">菜单</text>
+			</view>
+		</safe-area>
+
+
+		<view class="menu-wrap flex-h flex-1">
+			<scroll-view scroll-y class="left-category">
+				<view class="category-item-normal" :class="this.data.categoryIndex ===0?'category-item-current':'category-item-normal'"
+					 @click="switchCategory(0)">
+					<text class="category-text" :class="'category-text '
+                        + (this.data.categoryIndex === 0?'category-text-current':'category-text-normal')">
+						新品上市
+					</text>
+				</view>
+				<view class="category-item-normal" :class="this.data.categoryIndex ===1?'category-item-current':'category-item-normal'"
+					 @click="switchCategory(1)">
+					<text class="category-text" :class="'category-text '
+                        + (this.data.categoryIndex === 1?'category-text-current':'category-text-normal')">
+						主菜
+					</text>
+				</view>
+				<view class="category-item-normal" :class="this.data.categoryIndex ===2?'category-item-current':'category-item-normal'"
+					 @click="switchCategory(2)">
+					<text class="category-text" :class="'category-text '
+                        + (this.data.categoryIndex === 2?'category-text-current':'category-text-normal')">
+						饮料
+					</text>
+				</view>
+				<view class="category-item-normal" :class="this.data.categoryIndex ===3?'category-item-current':'category-item-normal'"
+					 @click="switchCategory(3)">
+					<text class="category-text" :class="'category-text '
+                        + (this.data.categoryIndex === 3?'category-text-current':'category-text-normal')">
+						主食
+					</text>
+				</view>
+				<view class="category-item-normal" :class="this.data.categoryIndex ===4?'category-item-current':'category-item-normal'"
+					 @click="switchCategory(4)">
+					<text class="category-text" :class="'category-text '
+                        + (this.data.categoryIndex === 4?'category-text-current':'category-text-normal')">
+						配菜
+					</text>
+				</view>
+			</scroll-view>
+			<scroll-view scroll-y scroll-with-animation class="right-list flex-1" id="right-list" @scroll="onScroll"
+				scroll-top={scrollTo}>
+
+				<view id="新品上市">
+					<view>
+						<text class="category-title">新品上市</text>
+					</view>
+					<view class="goods-item flex-h">
+						<img class="goods-pic" mode="aspectFill"
+							src="http://a9591bba3d7a4cf76617.qiniucdn.apicloud-system.com/apicloud/6e51da2766d83e1000c165a1277d7683.jpg"
+							alt="" />
+						<view class="goods-info flex-1">
+							<text class="goods-name flex-1">麻辣捞派滑牛肉</text>
+							<view class="flex-h">
+								<text class="goods-price-signal">¥</text>
+								<text class="flex-1 goods-price-num">48.00</text>
+								<img class="num-btn num-increase" @click="openAdd({})"
+									src="../../image/icon/icon-cart-num-increase.png" />
+							</view>
+						</view>
+					</view>
+					<view class="goods-item flex-h">
+						<img class="goods-pic" mode="aspectFill"
+							src="http://a565c1d1f30b65a4d46d.qiniucdn.apicloud-system.com/apicloud/89371227ca253da4184cc9e73e735eea.jpg"
+							alt="" />
+						<view class="goods-info flex-1">
+							<text class="goods-name flex-1">馒头</text>
+							<view class="flex-h">
+								<text class="goods-price-signal">¥</text>
+								<text class="flex-1 goods-price-num">0.01</text>
+								<img class="num-btn num-increase" @click="openAdd({})"
+									src="../../image/icon/icon-cart-num-increase.png" />
+							</view>
+						</view>
+					</view>
+					<view class="goods-item flex-h">
+						<img class="goods-pic" mode="aspectFill"
+							src="http://a565c1d1f30b65a4d46d.qiniucdn.apicloud-system.com/apicloud/52a752f87cbb8ebb44f0038b888f6628.png"
+							alt="" />
+						<view class="goods-info flex-1">
+							<text class="goods-name flex-1">捞派毛肚</text>
+							<view class="flex-h">
+								<text class="goods-price-signal">¥</text>
+								<text class="flex-1 goods-price-num">58.00</text>
+								<img class="num-btn num-increase" @click="openAdd({})"
+									src="../../image/icon/icon-cart-num-increase.png" />
+							</view>
+						</view>
+					</view>
+					<view class="goods-item flex-h">
+						<img class="goods-pic" mode="aspectFill"
+							src="http://a565c1d1f30b65a4d46d.qiniucdn.apicloud-system.com/apicloud/96869958a18c45cb7ed8ebaffb88335a.jpg"
+							alt="" />
+						<view class="goods-info flex-1">
+							<text class="goods-name flex-1">黄瓜</text>
+							<view class="flex-h">
+								<text class="goods-price-signal">¥</text>
+								<text class="flex-1 goods-price-num">0.02</text>
+								<img class="num-btn num-increase" @click="openAdd({})"
+									src="../../image/icon/icon-cart-num-increase.png" />
+							</view>
+						</view>
+					</view>
+
+				</view>
+
+				<view id="主菜">
+					<view>
+						<text class="category-title">主菜</text>
+					</view>
+
+
+					<view class="goods-item flex-h">
+						<img class="goods-pic" mode="aspectFill"
+							src="http://a565c1d1f30b65a4d46d.qiniucdn.apicloud-system.com/apicloud/52a752f87cbb8ebb44f0038b888f6628.png"
+							alt="" />
+						<view class="goods-info flex-1">
+							<text class="goods-name flex-1">捞派毛肚</text>
+							<view class="flex-h">
+								<text class="goods-price-signal">¥</text>
+								<text class="flex-1 goods-price-num">58.00</text>
+								<img class="num-btn num-increase" @click="openAdd({})"
+									src="../../image/icon/icon-cart-num-increase.png" />
+							</view>
+						</view>
+					</view>
+
+
+					<view class="goods-item flex-h">
+						<img class="goods-pic" mode="aspectFill"
+							src="http://a565c1d1f30b65a4d46d.qiniucdn.apicloud-system.com/apicloud/92b3e4593ce2aaa47c65282cbc57bee7.png"
+							alt="" />
+						<view class="goods-info flex-1">
+							<text class="goods-name flex-1">虾滑</text>
+							<view class="flex-h">
+								<text class="goods-price-signal">¥</text>
+								<text class="flex-1 goods-price-num"> 50.00</text>
+								<img class="num-btn num-increase" @click="openAdd({})"
+									src="../../image/icon/icon-cart-num-increase.png" />
+							</view>
+						</view>
+					</view>
+
+
+
+
+					<view class="goods-item flex-h">
+						<img class="goods-pic" mode="aspectFill"
+							src="http://a9591bba3d7a4cf76617.qiniucdn.apicloud-system.com/apicloud/6e51da2766d83e1000c165a1277d7683.jpg"
+							alt="" />
+						<view class="goods-info flex-1">
+							<text class="goods-name flex-1">麻辣捞派滑牛肉</text>
+							<view class="flex-h">
+								<text class="goods-price-signal">¥</text>
+								<text class="flex-1 goods-price-num">48.00</text>
+								<img class="num-btn num-increase" @click="openAdd({})"
+									src="../../image/icon/icon-cart-num-increase.png" />
+							</view>
+						</view>
+					</view>
+
+				</view>
+
+				<view id="饮料">
+					<view>
+						<text class="category-title">饮料</text>
+					</view>
+
+
+					<view class="goods-empty flex-center">
+						<text class="goods-empty-text">当前分类下暂无商品</text>
+						<text class="goods-empty-text">There is no goods in this classification</text>
+					</view>
+				</view>
+
+
+
+				<view id="主菜">
+					<view>
+						<text class="category-title">主食</text>
+					</view>
+
+
+					<view class="goods-item flex-h">
+						<img class="goods-pic" mode="aspectFill"
+							src="http://a565c1d1f30b65a4d46d.qiniucdn.apicloud-system.com/apicloud/89371227ca253da4184cc9e73e735eea.jpg"
+							alt="" />
+						<view class="goods-info flex-1">
+							<text class="goods-name flex-1">馒头</text>
+							<view class="flex-h">
+								<text class="goods-price-signal">¥</text>
+								<text class="flex-1 goods-price-num">0.01</text>
+								<img class="num-btn num-increase" @click="openAdd({})"
+									src="../../image/icon/icon-cart-num-increase.png" />
+							</view>
+						</view>
+					</view>
+
+
+					<view class="goods-item flex-h">
+						<img class="goods-pic" mode="aspectFill"
+							src="http://a565c1d1f30b65a4d46d.qiniucdn.apicloud-system.com/apicloud/52df113780cd238a3355e2e7ba0588e0.jpg"
+							alt="" />
+						<view class="goods-info flex-1">
+							<text class="goods-name flex-1">米饭</text>
+							<view class="flex-h">
+								<text class="goods-price-signal">¥</text>
+								<text class="flex-1 goods-price-num">0.13</text>
+								<img class="num-btn num-increase" @click="openAdd({})"
+									src="../../image/icon/icon-cart-num-increase.png" />
+							</view>
+						</view>
+					</view>
+				</view>
+
+
+                	<view id="配菜">
+					<view>
+						<text class="category-title">配菜</text>
+					</view>
+
+
+						<view class="goods-item flex-h">
+						<img class="goods-pic" mode="aspectFill"
+							src="http://a565c1d1f30b65a4d46d.qiniucdn.apicloud-system.com/apicloud/96869958a18c45cb7ed8ebaffb88335a.jpg"
+							alt="" />
+						<view class="goods-info flex-1">
+							<text class="goods-name flex-1">黄瓜</text>
+							<view class="flex-h">
+								<text class="goods-price-signal">¥</text>
+								<text class="flex-1 goods-price-num">0.02</text>
+								<img class="num-btn num-increase" @click="openAdd({})"
+									src="../../image/icon/icon-cart-num-increase.png" />
+							</view>
+						</view>
+					</view>
+
+
+					<view class="goods-item flex-h">
+						<img class="goods-pic" mode="aspectFill"
+							src="http://a565c1d1f30b65a4d46d.qiniucdn.apicloud-system.com/apicloud/7b8d9dff0e5ca6ae842d4c03140ecde1.jpg"
+							alt="" />
+						<view class="goods-info flex-1">
+							<text class="goods-name flex-1">韭菜</text>
+							<view class="flex-h">
+								<text class="goods-price-signal">¥</text>
+								<text class="flex-1 goods-price-num">0.13</text>
+								<img class="num-btn num-increase" @click="openAdd({})"
+									src="../../image/icon/icon-cart-num-increase.png" />
+							</view>
+						</view>
+					</view>
+				</view>
+
+			</scroll-view>
+		</view>
+
+		<!-- 
+		<view v-if="currentGoods" style="position: absolute;width: 100%;height: 100%;">
+			<goods-add :goods="currentGoods"></goods-add>
+		</view> -->
+	</view>
+</template>
+<script>
+
+import GoodsCounter from "../../components/goods-counter.stml";
+import GoodsAdd from "../goods_add/goods_add.stml";
+import { GET } from "../../script/req";
+import { isMP } from "../../script/util";
+
+export default {
+	name: 'main-menu',
+	components: { GoodsCounter, GoodsAdd },
+	apiready() {
+		this.getMenuData();
+		api.addEventListener({
+			name: 'CLOSE-GOODS-ADD'
+		}, _ => {
+			wx.showTabBar();
+			this.data.currentGoods = null;
+		})
+	},
+	data() {
+		return {
+			CD: new Date().getTime(),
+			categoryIndex: 0,
+			menuList: {},
+			scrollTo: 0,
+			currentGoods: null
+		}
+	},
+	computed: {
+		// 使用 v-for 遍历对象的时候 暂时使用计算替代
+		categoryNames() {
+			return Object.keys(this.data.menuList)
+		},
+		offsetList() {
+			const goodsHeight = 90;
+			const emptyHeight = 88;
+			const goodsNameHeight = 18;
+			let offsetList = [0];
+			let offset = 0;
+			for (const category in this.data.menuList) {
+				let goodsLength = this.data.menuList[category].length;
+				offset += (goodsLength ? goodsLength * goodsHeight : emptyHeight) + goodsNameHeight
+				offsetList.push(offset);
+			}
+			return offsetList;
+		}
+	},
+	methods: {
+		switchCategory(index) {
+			this.data.categoryIndex = index;
+			this.data.CD = new Date().getTime() + 500; // 手动切换分类后需要锁定500毫秒 避免右侧scroll-view滚动时带来次生问题
+			this.data.scrollTo = this.offsetList[index];
+		},
+		onScroll(e) {
+			const y = isMP() ? e.detail.scrollTop : e.detail.y;
+
+			for (let i = 0; i < this.offsetList.length; i++) {
+				if (i) {// 第一个不判断
+					if (y >= this.offsetList[i - 1] && y < this.offsetList[i]) {//判断是否在区间内
+						if (new Date().getTime() > this.data.CD) {//冷却CD已经不存在
+							this.data.categoryIndex = i - 1; //设置左边的高亮
+						}
+					}
+				}
+			}
+		},
+		openAdd(goods) {
+			if (isMP()) {
+				this.data.currentGoods = goods;
+				wx.hideTabBar();
+			} else {
+				api.openFrame({
+					name: 'goods_add',
+					url: '../goods_add/goods_add.stml',
+					pageParam: { goods }
+				})
+			}
+		},
+		getMenuData() {
+			GET('goods_categories/goods_list').then(data => {
+				let menuList = {};
+				data.forEach(item => {
+					menuList[item.name] = item.goods_list;
+				})
+				this.data.menuList = menuList;
+			})
+		}
+	}
+}
+</script>
+
+
+<style scoped>
+.main-menu {
+	height: 100%;
+}
+
+.header {
+	border-bottom: 1px solid #eee;
+}
+
+.title {
+	font-weight: 500;
+	color: #020202;
+	font-size: 18px;
+	text-align: center;
+	line-height: 44px;
+	height: 44px;
+}
+
+.left-category {
+	width: 110px;
+	background: #f8f8f8;
+}
+
+.category-item-current {
+	background: #fff;
+	height: 50px;
+	justify-content: center;
+}
+
+.category-item-normal {
+	background: #f8f8f8;
+	height: 50px;
+	justify-content: center;
+}
+
+.category-text {
+	line-height: 50px;
+	text-align: center;
+	font-size: 13px;
+}
+
+.category-text-current {
+	font-weight: bold;
+	color: #333;
+}
+
+.category-text-normal {
+	font-weight: normal;
+	color: #666;
+}
+
+.right-list {
+	padding: 10px;
+}
+
+.category-title {
+	height: 18px;
+	font-weight: 500;
+	color: #333333;
+	font-size: 13px;
+	line-height: 18px;
+}
+
+.goods-item {
+	margin: 10px 0;
+}
+
+.goods-info {
+	margin: 0 5px 0 10px;
+}
+
+.goods-pic {
+	width: 70px;
+	height: 70px;
+	border-radius: 5px;
+}
+
+.goods-name {
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 500;
+	color: #333333;
+}
+
+.goods-price-signal {
+	font-size: 12px;
+	font-weight: 500;
+	color: #fe5760;
+	line-height: 22px;
+}
+
+.goods-price-num {
+	font-size: 15px;
+	font-weight: 500;
+	color: #fe5760;
+}
+
+.goods-empty {
+	height: 68px;
+	background: #f9f9f9;
+	margin: 10px;
+	border-radius: 5px;
+}
+
+.goods-empty-text {
+	color: #aaa;
+	font-size: 11px;
+}
+
+.num-btn {
+	width: 22px;
+	height: 22px;
+}
+
+.flex-h {
+	flex-direction: row;
+}
+
+.flex-1 {
+	flex: 1;
+}
+
+.flex-center {
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+</style>
